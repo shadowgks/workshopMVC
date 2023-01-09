@@ -1,8 +1,11 @@
 <?php
-require_once 'controllers/NoktaController.php';
+// require_once 'controllers/NoktaController.php';
+require_once 'autoload.php';
 
-$obj = new NoktaController();
+// header
+require './views/includes/header.php';
 
+$obj = new HomeController();
 $array_pages = ['home','update','delete','add'];
 
 if(isset($_GET['pages'])){
@@ -15,3 +18,7 @@ if(isset($_GET['pages'])){
 }else{
     include 'views/home.php';
 }
+
+
+//footer
+require './views/includes/footer.php';

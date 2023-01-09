@@ -1,10 +1,24 @@
 <?php
 
 class NoktaController{
-
     //Methode
-    public function index($page){
-        include 'views/'.$page.'.php';
+    function getAllNokat(){
+        $nokat = Nokat::getAll();
+        return $nokat;
     }
 
+    function addNokta(){
+        if(isset($_POST['add'])){
+            $data = array(
+                'name' => $_POST['nokta'],            
+            );
+
+            $add = Nokat::add($data);
+            if($add === true){
+                echo 'good';
+            }else{
+                echo 'faild';
+            }
+        }
+    }
 }
