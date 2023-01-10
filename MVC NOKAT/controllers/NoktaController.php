@@ -21,4 +21,16 @@ class NoktaController{
             }
         }
     }
+
+    function deleteNokta(){
+        if(isset($_POST['delete'])){
+            $id = $_POST['id_nokta'];
+            $delete = Nokat::delete($id);
+            if($delete === true){
+                echo 'delete good';
+            }else{
+                echo 'delete faild';
+            }
+        }
+    }
 }
