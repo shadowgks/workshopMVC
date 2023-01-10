@@ -1,9 +1,8 @@
 <?php
-// require_once 'controllers/NoktaController.php';
+//autoload
 require_once 'autoload.php';
-
-// header
-require './views/includes/header.php';
+//header
+require_once './views/includes/header.php';
 
 $obj = new HomeController();
 $array_pages = ['home','update','delete','add'];
@@ -21,4 +20,4 @@ if(isset($_GET['pages'])){
 
 
 //footer
-require './views/includes/footer.php';
+require_once './views/includes/footer.php';

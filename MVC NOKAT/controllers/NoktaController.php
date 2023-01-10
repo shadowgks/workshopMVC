@@ -17,6 +17,10 @@ class NoktaController{
 
             $add = Nokat::add($data);
             if($add === true){
+                // Redirect::To('home');
+                // var_dump(Redirect::To('home.php'));
+                header('location:'.BASE_URL);
+                // die;
                 echo 'good';
             }else{
                 echo 'faild';

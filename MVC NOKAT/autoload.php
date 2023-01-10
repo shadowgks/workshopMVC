@@ -1,6 +1,9 @@
 <?php
-
 session_start();
+
+
+
+require_once './bootstrap.php';
 
 spl_autoload_register('autoload');
 function autoload($class_name){
@@ -13,10 +16,10 @@ function autoload($class_name){
 
     $path = explode('\\', $class_name);
     $name = array_pop($path);
+    
 
-    foreach($path_array as $item){
+    foreach($path_array as $item){ 
         $file = sprintf($item.'%s.php',$name);
-
         if(is_file($file)){
             include $file;
         }
