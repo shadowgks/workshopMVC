@@ -1,12 +1,14 @@
 <?php
 
 class NoktaController{
-    //Methode
+    //Methodes CRUD
+    //read
     function getAllNokat(){
         $nokat = Nokat::getAll();
         return $nokat;
     }
 
+    //create
     function addNokta(){
         if(isset($_POST['add'])){
             $data = array(
@@ -22,6 +24,7 @@ class NoktaController{
         }
     }
 
+    //delete
     function deleteNokta(){
         if(isset($_POST['delete'])){
             $id = $_POST['id_nokta'];
@@ -30,6 +33,23 @@ class NoktaController{
                 echo 'delete good';
             }else{
                 echo 'delete faild';
+            }
+        }
+    }
+
+    //update
+    function updateNokta(){
+        if(isset($_POST['edit'])){
+            $data = array(
+                'id' => $_POST['id_nokta'],
+                'name' => $_POST['nokta']
+            );
+
+            $update = Nokat::update($data);
+            if($update === true){
+                echo 'update succefully';
+            }else{
+                echo 'update faild';
             }
         }
     }

@@ -12,6 +12,11 @@ if(isset($_POST['add'])){
 if(isset($_POST['delete'])){
     $delete_nokta = $data->deleteNokta();
 }
+
+//update
+if(isset($_POST['edit'])){
+    $edit_nokta  = $data->updateNokta();
+}
 ?>
 
 <!-- body -->

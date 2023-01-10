@@ -30,5 +30,16 @@ class Nokat{
             return false;
         }
     }
+
+    //update
+    static function update($data){
+        $stm = DB::connectDB()->prepare("UPDATE nokat set name = ? WHERE id = ?");
+        $exe = $stm->execute([$data['name'],$data['id']]);
+        if($exe){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 
